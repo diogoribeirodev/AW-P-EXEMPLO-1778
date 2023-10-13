@@ -1,12 +1,27 @@
 {
-    "students": [
-        {
-            "number": "1778",
-            "name": "Marcelo Filipe",
-            "city": "Braga",
-            "birthday": "17-09-1991"
-        }
-    ],
-    "schools": [],
-    "courses": []
+  "students": [
+    {
+      "number": "1778",
+      "name": "Marcelo Filipe",
+      "city": "Braga",
+      "birthday": "2"
+    }
+  ],
+  "schools": [
+    {
+      "number": "1812",
+      "name": "Escola Superior de Media Artes e Design",
+      "sigla": "ESMAD",
+      "morada": "Rua Central de Gandra, 1317",
+      "website": "http://www.esmad.ipp.pt/"
+    }
+  ],
+  "courses": [
+    {
+      "number": "12",
+      "name": "Design de Comunicação",
+      "sigla": "DCOM",
+      "school": "1812"
+    }
+  ]
 }
