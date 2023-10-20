@@ -20,7 +20,7 @@ exports.getById = async (req, res) => {
   const data = JSON.parse(datajson);
   //finds student by his id
   const student = data.students.filter((student) => student.number == id);
-  if (student.length == 0) return res.status(400).send("Aluno não existe!");
+  if (student.length == 0) return res.status(404).send("Aluno não existe!");
   //return student
   res.send(student);
 };
@@ -61,7 +61,7 @@ exports.update = async (req, res) => {
   const data = JSON.parse(datajson);
   //find student to update
   const student = data.students.find((student) => student.number == number);
-  if (!student) return res.status(400).send("Aluno não existe!");
+  if (!student) return res.status(404).send("Aluno não existe!");
   //update properties
   student.name = name;
   student.city = city;
@@ -87,7 +87,7 @@ exports.delete = async (req, res) => {
   const data = JSON.parse(datajson);
   //find student to delete
   const student = data.students.filter((student) => student.number == id);
-  if (student.length == 0) return res.status(400).send("Aluno não existe!");
+  if (student.length == 0) return res.status(404).send("Aluno não existe!");
   //delete student
   data.students.splice(student, 1);
   //update local database

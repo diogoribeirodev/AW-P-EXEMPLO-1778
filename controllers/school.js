@@ -20,7 +20,7 @@ exports.getById = async (req, res) => {
   const data = JSON.parse(datajson);
   //finds school by his id
   const school = data.schools.filter((school) => school.number == id);
-  if (school.length == 0) return res.status(400).send("Escola não existe!");
+  if (school.length == 0) return res.status(404).send("Escola não existe!");
   //return school
   res.send(school);
 };
@@ -61,7 +61,7 @@ exports.update = async (req, res) => {
   const data = JSON.parse(datajson);
   //find school to update
   const school = data.schools.find((school) => school.number == number);
-  if (!school) return res.status(400).send("Escola não existe!");
+  if (!school) return res.status(404).send("Escola não existe!");
   //update properties
   school.name = name;
   school.sigla = sigla;
@@ -88,7 +88,7 @@ exports.delete = async (req, res) => {
   const data = JSON.parse(datajson);
   //find school to delete
   const school = data.schools.filter((school) => school.number == id);
-  if (school.length == 0) return res.status(400).send("Escola não existe!");
+  if (school.length == 0) return res.status(404).send("Escola não existe!");
   //delete school
   data.schools.splice(school, 1);
   //update local database

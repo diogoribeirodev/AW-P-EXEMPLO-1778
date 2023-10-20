@@ -20,7 +20,7 @@ exports.getById = async (req, res) => {
   const data = JSON.parse(datajson);
   //finds course by his id
   const course = data.courses.filter((course) => course.number == id);
-  if (course.length == 0) return res.status(400).send("Curso não existe!");
+  if (course.length == 0) return res.status(404).send("Curso não existe!");
   //return course
   res.send(course);
 };
@@ -61,7 +61,7 @@ exports.update = async (req, res) => {
   const data = JSON.parse(datajson);
   //find course to update
   const course = data.courses.find((course) => course.number == number);
-  if (!course) return res.status(400).send("Curso não existe!");
+  if (!course) return res.status(404).send("Curso não existe!");
   //update properties
   course.name = name;
   course.sigla = sigla;
@@ -87,7 +87,7 @@ exports.delete = async (req, res) => {
   const data = JSON.parse(datajson);
   //find school to delete
   const course = data.courses.filter((course) => course.number == id);
-  if (course.length == 0) return res.status(400).send("Curso não existe!");
+  if (course.length == 0) return res.status(404).send("Curso não existe!");
   //delete school
   data.courses.splice(course, 1);
   //update local database
