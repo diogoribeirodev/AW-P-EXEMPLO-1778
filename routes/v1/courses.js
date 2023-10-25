@@ -1,5 +1,5 @@
 const courseRouter = require("express").Router();
-const controller = require("../controllers/course");
+const controller = require("../../controllers/v1/course");
 
 //courses CRUD
 courseRouter.get("/", controller.getAll); //read all
