@@ -872,6 +872,47 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "POST: api/v2/auth/signup",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Marcelo\",\r\n    \"email\": \"marcelo@ipvc.pt\",\r\n    \"password\": \"12345Qw!\",\r\n    \"isAdmin\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/api/v2/auth/signup"
+							},
+							"response": []
+						},
+						{
+							"name": "POST: api/v2/auth/signin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"marcelo@ipvc.pt\",\r\n    \"password\": \"12345Qw!\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/api/v2/auth/signin"
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		}
