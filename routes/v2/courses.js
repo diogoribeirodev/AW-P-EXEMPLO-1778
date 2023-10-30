@@ -1,5 +1,8 @@
 const courseRouter = require("express").Router();
 const controller = require("../../controllers/v2/course");
+const authMiddleware = require("../../middlewares/auth");
+
+courseRouter.use(authMiddleware);
 
 //courses CRUD
 courseRouter.get("/", controller.getAll); //read all
