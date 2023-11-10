@@ -23,7 +23,7 @@ exports.getById = async (req, res) => {
         number: id,
       },
     });
-    return course;
+    res.status(200).json(course);
   } catch (error) {
     if (error.code == "P2025") return res.status(404).send("Curso não existe!");
     res.status(404).json({ msg: error.message });
